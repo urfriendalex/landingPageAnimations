@@ -69,7 +69,7 @@ nav{
 
 #hamburger:hover span:nth-of-type(2){
     margin: 0 15px;
-    width: 2px;
+    width: 6px;
     height: 6px;
     border-radius: 50%;
 }
@@ -105,9 +105,10 @@ section{
 .hero img{
     width: 100%;
     height: 100%;
-    opacity: 0.8;
+    opacity: 0.6;
     object-fit: scale-down;
     transition: all 0.5s;
+    filter: contrast(1.1);
 }
 
 .hero .forscale:hover ~ img{

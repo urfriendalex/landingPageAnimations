@@ -50,23 +50,22 @@ tl.fromTo(
         .3,
         {width: '0'},
         {width: '36px',
-        ease: Power2.easeInOut} 
+        ease: Power2.easeInOut, clearProps﻿:"width"}
     )
     .fromTo(
         hamburger2,
         .3,
         {width: '0'},
         {width: '26px',
-        ease: Power2.easeInOut} 
+        ease: Power2.easeInOut, clearProps﻿:"width"}
     )
     .fromTo(
         hamburger3,
         .3,
         {width: '0'},
         {width: '20px',
-        ease: Power2.easeInOut} 
+        ease: Power2.easeInOut, clearProps﻿:"width"}
     );
-    
 
 
 function test(){
