@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: black;
+    z-index: -1;
+}
+#logo{
+    color: white;
+    font-size: 2em;
+    z-index: 3;
+
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    margin: 0 auto;
+    min-height: 10vh;
+}
+
+
+#hamburger span {
+    display: block;
+    background-color: white;
+    height: 2px;
+    border-radius: 1px;
+    margin: 8px 0 6px 0;
+    
+    transition: all .5s ease-in;
+}
+
+#hamburger{
+    width: 36px;
+    cursor: pointer;
+    transition: all .5s ease;
+    z-index: 4;
+}
+
+#hamburger span:nth-of-type(1){
+    width: 36px;
+}
+#hamburger span:nth-of-type(2){
+    width: 26px;
+}
+#hamburger span:nth-of-type(3){
+    width: 20px;
+}
+#hamburger:hover span:nth-of-type(1){
+    margin-bottom: 10px;
+}
+
+#hamburger:hover span:nth-of-type(2){
+    margin: 0 15px;
+    width: 2px;
+    height: 6px;
+    border-radius: 50%;
+}
+#hamburger:hover span:nth-of-type(3){
+    margin-top: 10px;
+    width: 36px;
+}
+
+
+section{
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forscale {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: transparent;
+    z-index: 4;
+}
+
+.hero img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    object-fit: scale-down;
+    transition: all 0.5s;
+}
+
+.hero .forscale:hover ~ img{
+    transform: scale(1.3);
+    opacity: 1;
+}
+
+
+.headline{
+    position: absolute;
+    top: 90%;
+    left: 10%;
+    font-size: 2.5em;
+    transform: translate(-20%,-70%);
+    color: white; 
+    z-index: 3;
+}
