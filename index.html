@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <title>Paintless</title>
 </head>
 <body>
     <header>
+        <div class="nav-slider">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <ul class="social-media">
+                <li><a><i class="fa fa-facebook"></i></a></li>
+                <li><a><i class="fa fa-twitter"></i><a></a></li>
+                <li><a><i class="fa fa-telegram"></i></a></li>
+            </ul>        
+        </div>
         <nav>
             <h1 id="logo">Paint You</h1>
-            <div id="hamburger">
+            <div class="hamburger">
                 <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="icon-bar"><i class="fa fa-times"></i></span>
                 <span class="icon-bar"></span>
             </div>
         </div>
@@ -24,7 +38,12 @@
             <div class="hero">
                 <div class="forscale"></div>
                 <img id="heroimg" src="./img/hero.jpg" alt="hero">
-                <h1 class="headline">We are the ones</h1>
+                <h1 class="headline">We are the ones </h1>
+                <div class="next-arrow">
+                    <span></span>
+                    <span></span>
+                </div>
+
             </div>
         </section>
 
