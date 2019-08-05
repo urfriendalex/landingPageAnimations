@@ -18,7 +18,7 @@ const socailMedia = document.querySelector('.social-media')
 const nextArrow = document.querySelector('.next-arrow')
 
 const tl1 = new TimelineMax();
-const tl2 = new TimelineMax({paused:true});
+const tl2 = new TimelineMax({paused: true, reversed: true});
 
 
 tl1.fromTo(
@@ -68,17 +68,31 @@ tl1.fromTo(
         {width: '0', border: '0'},
         {width: '20px', border: '1px solid white',
         ease: Power2.easeInOut, clearProps: "width, border"}
+    )
+    .fromTo(
+        nextArrow.children[0],
+        .3,
+        {height: '0'},
+        {height: '18px',
+        ease: Power2.easeInOut, clearProps: "height"}
+    )
+    .fromTo(
+        nextArrow.children[1],
+        .3,
+        {height: '0'},
+        {height: '18px',
+        ease: Power2.easeInOut, clearProps: "height"}
     );
 
 
     tl2.fromTo(
             navslider,
-            0.1,
+            0,
             {display: "none"},
             {display: "flex"}
         ).fromTo(
             navslider,
-            0.8,
+            0.5,
             {right: "-30%"},
             {right: "0"}
         ).fromTo(
@@ -88,41 +102,45 @@ tl1.fromTo(
             {right: "0"}
         ).fromTo(
             navlinks.children[1],
-            0.2,
+            0.15,
             {right: "-100%"},
             {right: "0"}
         ).fromTo(
             navlinks.children[2],
-            0.2,
+            0.15,
             {right: "-100%"},
             {right: "0"}
         ).fromTo(
             navlinks.children[3],
-            0.2,
+            0.15,
             {right: "-100%"},
             {right: "0"}
         ).fromTo(
             socailMedia,
-            0.4,
+            0.3,
             {bottom: "-100%"},
             {bottom: "0"}
-        )
+        );
 
 hamburger.addEventListener("click",function(){
-    if (!hamburger.classList.contains("active")){
-        hamburger.classList.add("active");
-        tl2.play();
-    }
-    else
-    {
-        hamburger.classList.remove("active");
-        tl2.reverse();
-    }
-})
+    hamburger.classList.toggle("active");
+    tl2.reversed() ? tl2.play() : tl2.reverse();
+
+    // Essential way
+    //
+    // if (!hamburger.classList.contains("active")){
+    //     hamburger.classList.add("active");
+    //     tl2.play()
+    // }
+    // else
+    // {
+    //     hamburger.classList.remove("active");
+    //     tl2.reverse();
+    // }
+    
+});
 
 const tl3 = new TimelineMax({paused:true, repeat:1, yoyo:true});
-
-
 
   nextArrow.addEventListener("click",function(){
       tl3.play();
