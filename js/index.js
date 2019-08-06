@@ -17,9 +17,13 @@ const socailMedia = document.querySelector('.social-media')
 
 const nextArrow = document.querySelector('.next-arrow')
 
+const navDots = document.querySelectorAll('.nav-dots a')
+
+const aboutSection = $('.about-wrapper');
+
+
 const tl1 = new TimelineMax();
 const tl2 = new TimelineMax({paused: true, reversed: true});
-
 
 tl1.fromTo(
         slider,
@@ -82,6 +86,30 @@ tl1.fromTo(
         {height: '0'},
         {height: '18px',
         ease: Power2.easeInOut, clearProps: "height"}
+    ).fromTo(
+        navDots[0],
+        .05,
+        {opacity: 0},
+        {opacity: 1,
+        ease: Power2.easeInOut, clearProps: "opacity"}
+    ).fromTo(
+        navDots[1],
+        .05,
+        {opacity: 0},
+        {opacity: 1,
+        ease: Power2.easeInOut, clearProps: "opacity"}
+    ).fromTo(
+        navDots[2],
+        .05,
+        {opacity: 0},
+        {opacity: 1,
+        ease: Power2.easeInOut, clearProps: "opacity"}
+    ).fromTo(
+        navDots[3],
+        .05,
+        {opacity: 0},
+        {opacity: 1,
+        ease: Power2.easeInOut, clearProps: "opacity"}
     );
 
 
@@ -137,11 +165,58 @@ hamburger.addEventListener("click",function(){
     //     hamburger.classList.remove("active");
     //     tl2.reverse();
     // }
-    
 });
 
-const tl3 = new TimelineMax({paused:true, repeat:1, yoyo:true});
+navlinks.addEventListener("click", function(){
+    tl2.reverse();
+})
 
-  nextArrow.addEventListener("click",function(){
-      tl3.play();
-  });
+$(window).scroll(function () {
+    var scrollbarLocation = $(this).scrollTop();
+    scrollbarLocation>200 ? nextArrow.style.opacity = "0" : nextArrow.style.opacity = "1"
+});
+
+//Smooth scrolling and nav-dots swithcing
+$(document).ready(function () {
+
+    var scrollLink = $('.scroll');
+
+    scrollLink.on('click', function (event) {
+
+        if (this.hash !== "") {
+            event.preventDefault();
+
+            var hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 1000, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    $(window).scroll(function () {
+        var scrollLink = $('.scroll'); 
+        
+    
+        var scrollbarLocation = $(this).scrollTop();
+        scrollLink.each(function () {
+    
+            var sectionOffset = $(this.hash).offset().top - 340;
+    
+            // if ($(window).height() >= 850 && sectionOffset > 1900)
+            //     sectionOffset = $(this.hash).offset().top - 700;
+            // if ($(window).height() <= 850 && sectionOffset > 1200)
+            //     sectionOffset = $(this.hash).offset().top - 550;
+            // if ($(window).height() >= 100 && sectionOffset > 2600)
+            //     sectionOffset = $(this.hash).offset().top - 1000;
+
+            if (sectionOffset <= scrollbarLocation) {
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+            }
+        })
+    });
+});
+

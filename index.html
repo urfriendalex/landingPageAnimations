@@ -12,13 +12,13 @@
 <body>
     
    
-        <header class="home-wrapper">
+        <header id="home" class="home-wrapper">
             <div class="nav-slider">
                 <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Catalog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home" class="scroll">Home</a></li>
+                    <li><a href="#about" class="scroll">About</a></li>
+                    <li><a href="#catalog" class="scroll">Catalog</a></li>
+                    <li><a href="#contact" class="scroll">Contact</a></li>
                 </ul>
                 <ul class="social-media">
                     <li><a><i class="fa fa-facebook"></i></a></li>
@@ -36,32 +36,39 @@
             </nav>
         
         
-            <section>
+            <section class="header-bottom">
                 <div class="hero">
-                    <div class="forscale"></div>
+                    <div class="for-scale"></div>
                     <img src="./img/hero.jpg" alt="hero">
                     <h1 class="headline">We are the ones </h1>
-                    <div class="next-arrow">
+                    <a href="#about" class="next-arrow scroll">
                         <span></span>
                         <span></span>
-                    </div>
+                    </a>
         
                 </div>
             </section>
         </header>
 
     <div class="slider"></div>
-    <div class="about-wrapper">
-        <h1>About</h1>
+    <div class="nav-dots">
+        <a href="#home" class="active scroll"></a>
+        <a href="#about" class="scroll"></a>
+        <a href="#catalog" class="scroll"></a>
+        <a href="#contact" class="scroll"></a>
     </div>
-    <div class="portfolio-wrapper">
-            <h1>Portfoilio</h1>
+
+    <div id="about" class="about-wrapper">
+            <h1>About</h1>
     </div>
-    <div class="contact-wrapper">
+    <div id="catalog" class="catalog-wrapper">
+            <h1>Catalog</h1>
+    </div>
+    <div id="contact" class="contact-wrapper">
             <h1>Contact</h1>
     </div>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
     <script src="./js/index.js"></script>
