@@ -1,3 +1,5 @@
+
+const doc = document.querySelector('html, body');
 const hero = document.querySelector('.hero')
 const slider = document.querySelector('.slider')
 const logo = document.querySelector('#logo')
@@ -25,7 +27,9 @@ const aboutSection = $('.about-wrapper');
 const tl1 = new TimelineMax();
 const tl2 = new TimelineMax({paused: true, reversed: true});
 
-tl1.fromTo(
+tl1
+    .to(doc, .3, {scrollTop: 0})
+    .fromTo(
         slider,
         1,
         { width: '0'},
@@ -171,6 +175,7 @@ navlinks.addEventListener("click", function(){
     tl2.reverse();
 })
 
+
 $(window).scroll(function () {
     var scrollbarLocation = $(this).scrollTop();
     scrollbarLocation>200 ? nextArrow.style.opacity = "0" : nextArrow.style.opacity = "1"
@@ -178,7 +183,6 @@ $(window).scroll(function () {
 
 //Smooth scrolling and nav-dots swithcing
 $(document).ready(function () {
-
     var scrollLink = $('.scroll');
 
     scrollLink.on('click', function (event) {
