@@ -350,4 +350,16 @@ nav {
   background-color: lawngreen; 
 }
 
+.footer-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 30%;
+  background: #000;
+}
+
+.partners ul{
+  color: #fff;
+  list-style: none
+}
 
