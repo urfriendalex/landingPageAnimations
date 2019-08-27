@@ -3,32 +3,23 @@ const doc = document.querySelector('html, body');
 const hero = document.querySelector('.hero')
 const slider = document.querySelector('.slider')
 const logo = document.querySelector('#logo')
-const hamburger = document.querySelector('.hamburger')
 
+const hamburger = document.querySelector('.hamburger')
 const hamburger1 = document.querySelector('.hamburger span:nth-of-type(1)')
 const hamburger2 = document.querySelector('.hamburger span:nth-of-type(2)')
 const hamburger3 = document.querySelector('.hamburger span:nth-of-type(3)')
 
 const headline = document.querySelector('.headline')
-
 const navslider = document.querySelector('.nav-slider')
-
 const navlinks = document.querySelector('.nav-links')
-
 const socailMedia = document.querySelector('.social-media')
-
 const nextArrow = document.querySelector('.next-arrow')
-
 const navDots = document.querySelectorAll('.nav-dots a')
-
-const aboutSection = $('.about-wrapper');
-
 
 const tl1 = new TimelineMax();
 const tl2 = new TimelineMax({paused: true, reversed: true});
 
-tl1
-    .to(doc, .3, {scrollTop: 0})
+tl1.to(doc, .3, {scrollTop: 0})
     .fromTo(
         slider,
         1,
@@ -173,27 +164,23 @@ hamburger.addEventListener("click",function(){
 
 navlinks.addEventListener("click", function(){
     tl2.reverse();
+    hamburger.classList.toggle("active");
 })
 
 
 $(window).scroll(function () {
     var scrollbarLocation = $(this).scrollTop();
-    scrollbarLocation>200 ? nextArrow.style.opacity = "0" : nextArrow.style.opacity = "1"
+    scrollbarLocation > 200 ? nextArrow.style.opacity = "0" : nextArrow.style.opacity = "1"
 });
 
 //Smooth scrolling and nav-dots swithcing
+
 $(document).ready(function () {
     var scrollLink = $('.scroll');
-
     scrollLink.on('click', function (event) {
-
         if (this.hash !== "") {
             event.preventDefault();
-
             var hash = this.hash;
-
-
-                
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
             }, 1000, function () {
@@ -204,13 +191,11 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
         var scrollLink = $('.scroll'); 
-        
-    
         var scrollbarLocation = $(this).scrollTop();
         scrollLink.each(function () {
-    
             var sectionOffset = $(this.hash).offset().top - 340;
     
+            // Some mobile corrections
             // if ($(window).height() >= 850 && sectionOffset > 1900)
             //     sectionOffset = $(this.hash).offset().top - 700;
             // if ($(window).height() <= 850 && sectionOffset > 1200)

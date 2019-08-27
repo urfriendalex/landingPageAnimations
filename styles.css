@@ -330,24 +330,31 @@ nav {
   }
 }
 
-
-.about-wrapper{
+.section-wrapper{
   display: flex;
-  height: 200vh;
+  height: 125vh;
   width: 100%;
-  background-color: olivedrab; 
+  justify-content: center;
+  align-items: center;
+}
+.about-wrapper{
+  color: rgb(26, 26, 26);
+  background-color: rgb(179, 146, 97); 
+}
+
+.about-wrapper h1 {
+  padding-top: 10%;
+  text-align: center;
 }
 .catalog-wrapper{
-  display: flex;
-  height: 200vh;
-  width: 100%;
-  background: fuchsia; 
+  height: 100vh;
+  color: white;
+  background: rgb(26, 26, 26); 
 }
 .contact-wrapper{
-  display: flex;
-  height: 200vh;
-  width: 100%;
-  background-color: lawngreen; 
+  height: 100vh;
+  color: rgb(26, 26, 26);
+  background-color: rgb(153, 47, 47); 
 }
 
 .footer-wrapper{
