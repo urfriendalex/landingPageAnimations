@@ -361,12 +361,51 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 30%;
+  height: 20vh;
   background: #000;
-}
-
-.partners ul{
   color: #fff;
-  list-style: none
 }
 
+.parterns-links{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 10vw;
+}
+
+
+.footer-nav{
+  width: 30%;
+}
+
+.footer-nav .nav-links{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.6em;
+}
+
+.footer-wrapper a{
+  transition: color .2s ease-in-out;
+}
+
+.footer-nav .nav-links li a:hover{
+  color: rgb(153, 47, 47);
+}
+
+
+.nav-links li{
+  margin: 0% 3%;
+}
+
+.footer-nav .nav-links a{
+  margin: 0;
+}
+
+.footer-social-media .footer-media{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 10vw;
+}
