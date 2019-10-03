@@ -116,7 +116,7 @@ tl1.to(doc, .3, {scrollTop: 0})
         ).fromTo(
             navslider,
             0.5,
-            {right: "-30%"},
+            {right: "-50%"},
             {right: "0"}
         ).fromTo(
             navlinks.children[0],

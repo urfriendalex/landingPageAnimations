@@ -42,7 +42,7 @@ nav {
 .hamburger {
   width: 36px;
   cursor: pointer;
-  z-index: 4;
+  z-index: 11;
 }
 
 .hamburger span {
@@ -91,7 +91,7 @@ nav {
   opacity: 0;
   margin: 0%
 }
-  .hamburger.active span:nth-of-type(3) {
+.hamburger.active span:nth-of-type(3) {
   opacity: 0;
   margin: 0%;
 }
@@ -126,7 +126,7 @@ nav {
   width: 30%;
   height: 100vh;
   background: rgb(153, 47, 47);
-  z-index: 4;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -408,4 +408,19 @@ nav {
   justify-content: space-between;
   list-style: none;
   width: 10vw;
+}
+
+@media (max-width: 900px){
+  .nav-slider{
+    width: 50%;
+  }
+  .footer-nav{
+    width: 100%;
+  }
+  .partners{
+    display: none;
+  }
+  .footer-social-media{
+    display: none;
+  }
 }
